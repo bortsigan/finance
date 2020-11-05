@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+		<meta name="docsearch:language" content="en">
+		<title>AWESOME FINANCIAL PLAN</title>
+
+		<!-- stylesheets !-->
+		<link href="styles/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="styles/fontawesome/css/all.css" rel="stylesheet">
+		<link href="styles/common/common.css?v=1" rel="stylesheet">
+
+		<!-- scripts !-->
+		<script src="styles/jquery/jquery.js"></script>
+		<script src="styles/bootstrap/js/bootstrap.js"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<form>
+				<div class="form-group row mt-10 ">
+					<label for="colFormLabelSm" class="col-sm-2	 col-form-label col-form-label-sm">Financial Adviser</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Financial Adviser..">
+					</div>
+
+					<label for="colFormLabelSm" class="col-sm-1	 col-form-label col-form-label-sm">Contact</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Contact..">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-2	 col-form-label col-form-label-sm">Date</label>
+					<div class="col-sm-3">
+						<input type="date" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Date..">
+					</div>
+
+					<label for="colFormLabelSm" class="col-sm-1	 col-form-label col-form-label-sm">Name</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Name..">
+					</div>
+
+					<label for="colFormLabelSm" class="col-sm-1	 col-form-label col-form-label-sm">Age</label>
+					<div class="col-sm-1">
+						<input type="number" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Age..">
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="container-fluid mt-25">
+			
+			<div class="row">
+				<div class="col-lg-2 col-sm-2">
+					<h6>Monthly Income</h6>
+					
+				</div>
+				<div class="col-lg-2 col-sm-2">
+					<input type="number" class="form-control form-control-sm" id="income" aria-describedby="income" placeholder="Enter Income Amount" />
+				</div>
+								
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-sm-2">
+					Yearly Income :
+				</div>
+				<div class="col-lg-2 col-sm-2" id="yearly-income">
+					₱ 00.00
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-2 col-sm-2">
+					Monthly Expenses : 
+				</div>
+				<div class="col-lg-2 col-sm-2" id="expenses">
+					₱ 00.00
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-2 col-sm-2">
+					Yearly Expenses : 
+				</div>
+				<div class="col-lg-2 col-sm-2" id="yearly-expenses">
+					₱ 00.00
+				</div>
+			</div>
+			
+			<ul class="nav nav-tabs mt-10">
+				<li class="nav-item">
+					<a class="nav-link active cashflow" href="#" data-id="cashflow">Cashflow</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link emergency" href="#" data-id="emergency">Emergency Fund & Protection</a>
+				</li>
+			</ul>
+
+			<div class="border border-primary mt-15" id="cashflow">
+				<div class="row">
+					<div class="col-lg-4">
+						<table class="table table-bordered table-sm" id="operating-activities-tbl">
+							<thead>
+								<tr>
+									<th scope="col" colspan="2" class="text-center">
+										Operating Activities
+											
+										<button type="button" class="btn btn-primary btn-sm float-right" id="add-operating-btn"><i class="far fa-plus-square"></i> </button>
+									</th>
+								</tr>
+							</thead>
+							<thead>
+								<th scope="col" class="text-center">Description</th>
+								<th scope="col" class="text-center">Cost</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" class="form-control form-control-sm" maxLength="20" placeholder="Description.." /></td>
+									<td>
+										<input type="number" class="form-control form-control-sm" placeholder="Cost.." value="0" />
+									</td>
+								</tr>
+							</tbody>
+							<tfoot class="">
+								<tr>
+									<td>
+										<strong>Total</strong>
+										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button> 
+									</td>
+									<td class="text-center" id="total">00.00</td>
+								</tr>
+								<tr>
+									<td>% of Monthly Income</td>
+									<td class="text-center" id="monthly">00.00</td>
+								</tr>
+								<tr>
+									<td>Recommended Limit</td>
+									<td class="text-center alert alert-warning" id="recommended">00.00</td>
+								</tr>
+								<tr>
+									<td>Unused Allocation</td>
+									<td class="text-center alert alert-success" id="unused">00.00</td>
+								</tr>
+								<tr>
+									<td>Amount Exceeding Limit</td>
+									<td class="text-center alert alert-danger" id="exceed">00.00</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+
+					<div class="col-lg-4">
+						<table class="table table-bordered table-sm" id="investing-activities-tbl">
+							<thead>
+								<tr>
+									<th scope="col" colspan="2" class="text-center">
+										Investing Activities
+										<button type="button" class="btn btn-primary btn-sm float-right" id="add-investing-btn"><i class="far fa-plus-square"></i> </button>
+									</th>
+								</tr>
+							</thead>
+							<thead>
+								<th scope="col" class="text-center">Description</th>
+								<th scope="col" class="text-center">Cost</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" class="form-control form-control-sm" maxLength="20" placeholder="Description.." /></td>
+									<td>
+										<input type="number" class="form-control form-control-sm" placeholder="Cost.." value="0" />
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>
+										<strong>Total</strong>
+										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
+									</td>
+									<td class="text-center" id="total">00.00</td>
+								</tr>
+								<tr>
+									<td>% of Monthly Income</td>
+									<td class="text-center" id="monthly">00.00</td>
+								</tr>
+								<tr>
+									<td>Minimum Amount</td>
+									<td class="text-center alert alert-warning" id="minimum">00.00</td>
+								</tr>
+								<tr>
+									<td>Amount Not Invested</td>
+									<td class="text-center alert alert-danger" id="notinvested">00.00</td>
+								</tr>
+							</tfoot>
+						</table>
+						
+					</div>
+
+					<div class="col-lg-4">
+						<table class="table table-bordered table-sm" id="financing-activities-tbl">
+							<thead>
+								<tr>
+									<th scope="col" colspan="2" class="text-center">
+										Financing Activities
+										<button type="button" class="btn btn-primary btn-sm float-right" id="add-financing-btn"><i class="far fa-plus-square"></i> </button>
+									</th>
+								</tr>
+							</thead>
+							<thead>
+								<th scope="col" class="text-center">Description</th>
+								<th scope="col" class="text-center">Cost</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" class="form-control form-control-sm" maxLength="20" placeholder="Description.." /></td>
+									<td><input type="number" class="form-control form-control-sm" placeholder="Cost.." value="0" /></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>
+										<strong>Total</strong>
+										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
+									</td>
+									<td class="text-center" id="total">00.00</td>
+								</tr>
+								<tr>
+									<td>% of Monthly Income</td>
+									<td class="text-center alert alert-warning" id="monthly">00.00</td>
+								</tr>
+								<tr>
+									<td>Recommended Limit</td>
+									<td class="text-center alert-success" id="recommended">00.00</td>
+								</tr>
+								<tr>
+									<td>Amount Exceeding Limit</td>
+									<td class="text-center alert-danger" id="exceed">00.00</td>
+								</tr>
+							</tfoot>
+						</table>
+						
+					</div>
+				</div> <!-- end cash flow !-->
+			</div>
+
+			<div class="border border-danger mt-15 d-none" id="emergency">
+				<div class="row">
+					<div class="col-lg-4">
+						<table class="table table-bordered table-sm" id="emergency-fund-tbl">
+							<thead>
+								<tr>
+									<th scope="col" colspan="2" class="text-center">
+										Emergency Fund
+									</th>
+								</tr>
+							</thead>
+							<thead>
+								<th scope="col" class="text-center">Requirement</th>
+								<th scope="col" class="text-center">Amount</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Minimum</td>
+									<td class="text-center">
+										<input type="number" name="fund-minimum" id="fund-minimum" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>Maximum</td>
+									<td class="text-center">
+										<input type="number" name="fund-maximum" id="fund-maximum" value="0" class="form-control form-control-sm"/>
+									</td>
+								</tr>
+								<tr>
+									<td>Actual</td>
+									<td class="text-center">
+										<input type="number" name="fund-actual" id="fund-actual" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Minimum EF Gap</strong>
+										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
+									</td>
+									<td class="text-center" id="minimum-ef-gap">₱ 0.00</td>
+								</tr>
+							</tbody>
+						</table>
+					</div> <!-- emergency fund !-->
+
+					<div class="col-lg-4">
+						<table class="table table-bordered table-sm" id="protection-fund-tbl">
+							<thead>
+								<tr>
+									<th scope="col" colspan="2" class="text-center">
+										Protection Fund
+									</th>
+								</tr>
+							</thead>
+							<thead>
+								<th scope="col" class="text-center">Insurance Coverage</th>
+								<th scope="col" class="text-center">Amount</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Recommended</td>
+									<td class="text-center">
+										<input type="number" name="protect-recommended" id="protect-recommended" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>Company insurance</td>
+									<td class="text-center">
+										<input type="number" name="protect-company-insurance" id="protect-company-insurance" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>Life insurance 1</td>
+									<td class="text-center">
+										<input type="number" name="protect-life-insurance-1" id="protect-life-insurance-1" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>Life insurance 2</td>
+									<td class="text-center">
+										<input type="number" name="protect-life-insurance-2" id="protect-life-insurance-2" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>Life insurance 3</td>
+									<td class="text-center">
+										<input type="number" name="protect-life-insurance-3" id="protect-life-insurance-3" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>Life insurance 4</td>
+									<td class="text-center">
+										<input type="number" name="protect-life-insurance-4" id="protect-life-insurance-4" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Total</strong>
+										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
+									</td>
+									<td class="text-center" id="protection-total">₱ 0.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Insurance Gap</strong>
+									</td>
+									<td class="text-center" id="insurance-gap">₱ 0.00
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div> <!-- protection requirement !-->
+
+					<div class="col-lg-4">
+						<table class="table table-bordered table-sm" id="critical-illness-coverage-tbl">
+							
+							<thead>
+								<th scope="col" class="text-center">Critical Illness</th>
+								<th scope="col" class="text-center">Amount</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Recommended</td>
+									<td class="text-center">
+										<input type="number" name="critical-recommended" id="critical-recommended" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>Actual</td>
+									<td class="text-center">
+										<input type="number" name="critical-actual" id="critical-actual" value="0" class="form-control form-control-sm" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Critical Illness Gap</strong>
+										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
+									</td>
+									<td class="text-center" id="illness-gap">₱ 0.00</td>
+								</tr>
+							</tbody>
+						</table>
+					</div> <!-- end etc !-->
+
+				</div> <!-- end emergency fund and protection !-->
+			</div>
+		</div> <!-- end container !-->
+		
+		<script type="text/javascript" src="styles/js/cashflow.js"></script>
+		<script type="text/javascript" src="styles/js/emergencyfund.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				InitializeOperatingActivities.init();
+				InitializeInvestingActivities.init();
+				InitializeFinancingActivities.init();
+				InitializeTabActivities.init();
+				InitalizeDeleteRow.init();
+				InitCalculateOperatingActivities.init();
+				InitCalculateInvestingActivities.init();
+				InitCalculateFinancingActivities.init();
+
+				// Emergency fund and protection
+				$('#emergency-fund-tbl #calculate').on('click', function() {
+					InitiaizeCalculateEmergencyFund.init();
+				});
+
+				$("#protection-fund-tbl #calculate").on('click', function() {
+					InitalizeCalculateProtectionRequirement.init();
+				});
+
+				$("#critical-illness-coverage-tbl #calculate").on('click', function() {
+					InitializeCalculateCriticalIllness.init();
+				});
+			});
+		</script>
+	</body>
+</html>

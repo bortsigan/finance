@@ -107,8 +107,7 @@
 								<tr>
 									<th scope="col" colspan="2" class="text-center">
 										Operating Activities
-											
-										<button type="button" class="btn btn-primary btn-sm float-right" id="add-operating-btn"><i class="far fa-plus-square"></i> </button>
+										<i class="far fa-plus-square btn btn-primary btn-sm float-right" id="add-operating-btn"></i>
 									</th>
 								</tr>
 							</thead>
@@ -124,11 +123,11 @@
 									</td>
 								</tr>
 							</tbody>
-							<tfoot class="">
+							<tfoot class="text-center">
 								<tr>
 									<td>
 										<strong>Total</strong>
-										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button> 
+										<i class="fas fa-calculator btn btn-secondary btn-sm float-right" id="calculate"></i>
 									</td>
 									<td class="text-center" id="total">00.00</td>
 								</tr>
@@ -136,17 +135,17 @@
 									<td>% of Monthly Income</td>
 									<td class="text-center" id="monthly">00.00</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-warning">
 									<td>Recommended Limit</td>
-									<td class="text-center alert alert-warning" id="recommended">00.00</td>
+									<td id="recommended">00.00</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-secondary">
 									<td>Unused Allocation</td>
-									<td class="text-center alert alert-success" id="unused">00.00</td>
+									<td class="text-center" id="unused">00.00</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-danger">
 									<td>Amount Exceeding Limit</td>
-									<td class="text-center alert alert-danger" id="exceed">00.00</td>
+									<td id="exceed">00.00</td>
 								</tr>
 							</tfoot>
 						</table>
@@ -158,7 +157,7 @@
 								<tr>
 									<th scope="col" colspan="2" class="text-center">
 										Investing Activities
-										<button type="button" class="btn btn-primary btn-sm float-right" id="add-investing-btn"><i class="far fa-plus-square"></i> </button>
+										<i class="far fa-plus-square btn btn-primary btn-sm float-right" id="add-investing-btn"></i>
 									</th>
 								</tr>
 							</thead>
@@ -174,25 +173,25 @@
 									</td>
 								</tr>
 							</tbody>
-							<tfoot>
+							<tfoot class="text-center">
 								<tr>
 									<td>
 										<strong>Total</strong>
-										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
+										<i class="fas fa-calculator btn btn-secondary btn-sm float-right" id="calculate"></i>
 									</td>
 									<td class="text-center" id="total">00.00</td>
 								</tr>
 								<tr>
 									<td>% of Monthly Income</td>
-									<td class="text-center" id="monthly">00.00</td>
+									<td id="monthly">00.00</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-secondary">
 									<td>Minimum Amount</td>
-									<td class="text-center alert alert-warning" id="minimum">00.00</td>
+									<td id="minimum">00.00</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-secondary">
 									<td>Amount Not Invested</td>
-									<td class="text-center alert alert-danger" id="notinvested">00.00</td>
+									<td id="notinvested">00.00</td>
 								</tr>
 							</tfoot>
 						</table>
@@ -205,7 +204,7 @@
 								<tr>
 									<th scope="col" colspan="2" class="text-center">
 										Financing Activities
-										<button type="button" class="btn btn-primary btn-sm float-right" id="add-financing-btn"><i class="far fa-plus-square"></i> </button>
+										<i class="far fa-plus-square btn btn-primary btn-sm float-right" id="add-financing-btn"></i>
 									</th>
 								</tr>
 							</thead>
@@ -220,24 +219,24 @@
 								</tr>
 							</tbody>
 							<tfoot>
-								<tr>
+								<tr class="text-center">
 									<td>
 										<strong>Total</strong>
-										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
+										<i class="fas fa-calculator float-right btn btn-secondary btn-sm" id="calculate"></i>
 									</td>
 									<td class="text-center" id="total">00.00</td>
 								</tr>
-								<tr>
+								<tr class="text-center">
 									<td>% of Monthly Income</td>
-									<td class="text-center alert alert-warning" id="monthly">00.00</td>
+									<td id="monthly">00.00</td>
 								</tr>
-								<tr>
+								<tr class="text-center alert-success">
 									<td>Recommended Limit</td>
-									<td class="text-center alert-success" id="recommended">00.00</td>
+									<td id="recommended">00.00</td>
 								</tr>
-								<tr>
+								<tr class="text-center alert-danger">
 									<td>Amount Exceeding Limit</td>
-									<td class="text-center alert-danger" id="exceed">00.00</td>
+									<td id="exceed">00.00</td>
 								</tr>
 							</tfoot>
 						</table>
@@ -246,6 +245,7 @@
 				</div> <!-- end cash flow !-->
 			</div>
 
+			<!-- Emergency fund !-->
 			<div class="border border-danger mt-15 d-none" id="emergency">
 				<div class="row">
 					<div class="col-lg-4">
@@ -280,7 +280,7 @@
 										<input type="number" name="fund-actual" id="fund-actual" value="0" class="form-control form-control-sm" />
 									</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-danger">
 									<td>
 										<strong>Minimum EF Gap</strong>
 										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
@@ -349,7 +349,7 @@
 									<td class="text-center" id="protection-total">₱ 0.00
 									</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-primary">
 									<td>
 										<strong>Insurance Gap</strong>
 									</td>
@@ -362,9 +362,15 @@
 
 					<div class="col-lg-4">
 						<table class="table table-bordered table-sm" id="critical-illness-coverage-tbl">
-							
 							<thead>
-								<th scope="col" class="text-center">Critical Illness</th>
+								<tr>
+									<th scope="col" colspan="2" class="text-center">
+										Critical Illness Coverage
+									</th>
+								</tr>
+							</thead>
+							<thead>
+								<th scope="col" class="text-center">Coverage</th>
 								<th scope="col" class="text-center">Amount</th>
 							</thead>
 							<tbody>
@@ -380,7 +386,7 @@
 										<input type="number" name="critical-actual" id="critical-actual" value="0" class="form-control form-control-sm" />
 									</td>
 								</tr>
-								<tr>
+								<tr class="alert alert-danger">
 									<td>
 										<strong>Critical Illness Gap</strong>
 										<button type="button" class="btn btn-success btn-sm float-right" id="calculate"> <i class="fas fa-calculator"></i></button>
